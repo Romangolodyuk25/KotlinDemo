@@ -1,5 +1,5 @@
 fun main(args:Array<String>) {
-    var data = Array(3, { _ -> CharArray(3) })
+    val data = Array(3, { _ -> CharArray(3) })
     data[0][0] = 'x'
     data[0][1] = 'o'
     data[0][2] = 'o'
@@ -61,6 +61,8 @@ fun main(args:Array<String>) {
     result(data)
 
 }
+
+//перименовать функцию
 fun result(data: Array<CharArray>) {
     draw(data)
     var winx = checkwin(data, 'o')
@@ -140,10 +142,10 @@ fun isinprogress(data: Array<CharArray>): Boolean {
     }
     return result
 }
+
 fun draw(data:Array<CharArray>) {
     for (array1 in data) {
         for (array2 in array1) {
-
             print("$array2")
         }
         println()
