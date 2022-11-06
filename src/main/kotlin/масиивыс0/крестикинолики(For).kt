@@ -96,7 +96,7 @@ fun checkwon(data: Array<CharArray>, opponent: Char, player: Char): Boolean {
     var xwin = false
     var ifwindiagonal = false
 
-    for (index in 0..2) {
+    for (index in 0..data.size-1) {
         if (data[index][index] == player) {
             xwin = true
         } else if ((data[index][index] == ' ') || (data[index][index] == opponent)) {
@@ -107,7 +107,7 @@ fun checkwon(data: Array<CharArray>, opponent: Char, player: Char): Boolean {
     if (xwin == true) {
         ifwindiagonal=xwin
     }
-    for (index in 2 downTo 0) {
+    for (index in data.size-1 downTo 0) {
         if (ifwindiagonal==true) {
             break
         }
@@ -118,11 +118,11 @@ fun checkwon(data: Array<CharArray>, opponent: Char, player: Char): Boolean {
             break
         }
     }
-    for (index in 0..2) {
+    for (index in 0..data.size-1) {
         if (xwin==true) {
             break
         }
-        for (index1 in 0..2) {// проверяет строки но нужно сделать так что если 3х и тру то закончить цикл
+        for (index1 in 0..data.size-1) {// проверяет строки но нужно сделать так что если 3х и тру то закончить цикл
             if (data[index][index1] == player) {
                 xwin = true
             } else if ((data[index][index1] == ' ') || (data[index][index1] == opponent)) {
@@ -134,11 +134,11 @@ fun checkwon(data: Array<CharArray>, opponent: Char, player: Char): Boolean {
 //            break
 //        }
     }
-    for (index in 0..2) {
+    for (index in 0..data.size-1) {
         if (xwin==true) {
             break
         }
-        for (index1 in 0..2) {
+        for (index1 in 0..data.size-1) {
             if (data[index1][index] == player) {
                 xwin = true
             } else if ((data[index1][index] == ' ') || (data[index1][index] == opponent)) {
@@ -155,11 +155,11 @@ fun checkwon(data: Array<CharArray>, opponent: Char, player: Char): Boolean {
 fun inprogres(data:Array<CharArray>): Boolean {
     var progress = false
 
-    for (index in 0..2) {
+    for (index in 0..data.size-1) {
         if (progress==true) {
             break
         }
-        for (index1 in 0..2) {
+        for (index1 in 0..data.size-1) {
             if (data[index1][index] == ' ') {
                 progress = true
             }
